@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.fxmlController">
+  <content>
+    <AnchorPane fx:id="myAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="700.0">
+         <children>
+            <WebView fx:id="browser" layoutX="-46.0" layoutY="-173.0" prefHeight="796.0" prefWidth="818.0" AnchorPane.bottomAnchor="-23.0" AnchorPane.leftAnchor="-46.0" AnchorPane.rightAnchor="-72.0" AnchorPane.topAnchor="-173.0" />
+            <ToolBar layoutX="31.0" layoutY="23.0" prefHeight="40.0" prefWidth="405.0">
+              <items>
+                  <Button fx:id="AddText" mnemonicParsing="false" onAction="#handleAddText" text="addFile" />
+                  <Button fx:id="Randomwalk" mnemonicParsing="false" onAction="#handleRandomwalk" text="Random" />
+                <Button fx:id="queryBridge" mnemonicParsing="false" onAction="#handleQuerybridge" text="Bridge" />
+                  <Button fx:id="Path" mnemonicParsing="false" onAction="#handleShortestPath" text="Path" />
+                  <TextField fx:id="Src" prefHeight="23.0" prefWidth="73.0" promptText="Src" />
+                  <TextField fx:id="Dst" prefHeight="23.0" prefWidth="77.0" promptText="Dst" />
+              </items>
+            </ToolBar>
+            <TextArea fx:id="Output" layoutX="109.0" layoutY="69.0" prefHeight="59.0" prefWidth="327.0" promptText="output text" />
+            <Button fx:id="NewText" layoutX="32.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleNewText" text="geneText" />
+            <Slider fx:id="Slide" layoutX="59.0" layoutY="166.0" max="1.0" orientation="VERTICAL" />
+            <Button fx:id="saveImg" layoutX="32.0" layoutY="105.0" mnemonicParsing="false" onAction="#handlesaveImg" prefHeight="23.0" prefWidth="68.0" text="saveImg" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

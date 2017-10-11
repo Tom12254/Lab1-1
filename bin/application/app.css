@@ -1,0 +1,46 @@
+svg {
+    background-color: #FFF;
+	cursor: default;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+path.link {
+	stroke: #FF0000;
+  	stroke-opacity: 0.9;
+}
+
+path.link.selected {
+    stroke: #6600FF;
+    stroke-width: 5px;
+}
+
+path.link.walked {
+    stroke: #000000;
+    stroke-width: 3px;
+}
+
+circle.node {
+}
+
+circle.node.focus {
+    stroke: #000;
+	stroke-width: 2px;
+}
+
+text {
+    font: 12px sans-serif;
+	pointer-events: none;
+}
+
+text.id {
+    text-anchor: middle;
+	font-weight: normal;
+}
+
+text.linktext {
+	font-weight: normal;
+}
