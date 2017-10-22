@@ -52,10 +52,10 @@ public class BuildPtr{
             e1.printStackTrace();
         } catch (IOException e1) {
             // Å×³öIOÒì³£
-            e1.printStackTrace();
+            e1.printStackTrace() ;
         }
 		if(mystr != null){
-			for(int i = 0; i < Max; i ++){
+			for(int i = 0 ; i < Max; i ++){
 				for(int j = 0; j < Max; j++){
 					myptr[i][j] = INF;
 					path[i][j] = -1;
@@ -105,10 +105,8 @@ public class BuildPtr{
 		set2.clear();
 		if(myvec.indexOf(s1) != -1 && myvec.indexOf(s2) != -1 ){
 		for(int i = 0; i < myvec.size();i++){
-			if(myptr[myvec.indexOf(s1)][i]!=INF)
-				set1.add(i);
-			if(myptr[i][myvec.indexOf(s2)]!=INF)
-				set2.add(i);
+			if(myptr[myvec.indexOf(s1)][i]!=INF) set1.add(i);
+			if(myptr[i][myvec.indexOf(s2)]!=INF) set2.add(i) ;
 		}
 		set1.retainAll(set2);
 		}
@@ -117,7 +115,8 @@ public class BuildPtr{
 
 	public String queryBridgeWords(String s1, String s2){
 		outtext = "";
-		if(myvec.indexOf(s1) == -1 ||myvec.indexOf(s2) == -1 ){
+		if(myvec.indexOf(s1) == -1 ||myvec.indexOf(s2) == -1 )
+		{
 			return "No "+s1+" or "+s2+" in graph!";
 		}
 		if(!BridgeWords(s1,s2).isEmpty()){
@@ -136,11 +135,11 @@ public class BuildPtr{
 		int sub = -1;
 		newstr = oldstr = null;
 		outtext = "";
-		String[] input = inputText.split("\\s+");
+		String[] input = inputText.split("\\s+") ;
 		for(String ss: input){
 			if(newstr == null){
 				outtext += ss + " ";
-				newstr = ss.toLowerCase();
+				newstr = ss.toLowerCase() ;
 			}
 			else{
 				oldstr = newstr;
@@ -148,17 +147,18 @@ public class BuildPtr{
 				if(myvec.indexOf(oldstr) != -1 && myvec.indexOf(newstr) != -1){
 					if(!BridgeWords(oldstr, newstr).isEmpty()){
 						for(int k : BridgeWords(oldstr, newstr)){
-							sub = k;
+							sub =  k;
 						}
 						outtext += myvec.get(sub) + " ";
 					}
 				}
-				outtext += ss + " ";
+				outtext += ss + " " ;
 			}
 		}
 		return outtext;
 	}
-	public Vector<String> pathcollect(String s1, String s2){
+	public Vector<String> pathcollect(String s1, String s2)
+	{
 		Vector<String> spath = new Vector<String>();
 		if(myvec.indexOf(s1)==-1||myvec.indexOf(s2)==-1||path[myvec.indexOf(s1)][myvec.indexOf(s2)] == -1)
 			return spath;
@@ -173,12 +173,12 @@ public class BuildPtr{
 	public String calcShortestPath(String s1, String s2){
 		outtext = "";
 		if(myvec.indexOf(s1) == -1 || myvec.indexOf(s2) == -1)
-			return outtext = s1 + " or "+s2+" not in grapg!";
+			return outtext = s1 + " or "+s2+" not in  grapg!" ;
 		else if(floyd[myvec.indexOf(s1)][myvec.indexOf(s2)] >= INF)
 			return outtext = s1 + " can not reach "+s2;
 		Vector<String> sspath = pathcollect(s1, s2);
 		if(sspath.size()>0){
-			outtext += sspath.get(0);
+			outtext += sspath.get(0) ;
 			for(int i = 1; i<sspath.size();i++){
 				outtext += "->"+ sspath.get(i);
 			}
@@ -194,6 +194,7 @@ public class BuildPtr{
 			for(int j = 0; j < myvec.size(); j++)
 				this.isvisited[i][j] = false;
 		Random rand = new Random();
+		
 		int sub = rand.nextInt(myvec.size())  ;
 		int sub2 = -1;
 		while(true){
@@ -208,6 +209,7 @@ public class BuildPtr{
 				while(myptr[sub][sub2 = rand.nextInt(myvec.size())] == INF && !this.isvisited[sub][sub2]);
 				if(!this.isvisited[sub][sub2] ){
 					this.isvisited[sub][sub2] = true;
+					
 					outtext += myvec.get(sub)+" ";
 					element.addElement(myvec.get(sub));
 					sub = sub2;
